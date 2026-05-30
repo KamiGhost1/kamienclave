@@ -1,0 +1,10 @@
+/bin/
+*.test
+*.out
+coverage.txt
+
+# Никогда не коммитить чужие защищаемые приложения и секреты окружения.
+examples/test-bundle/
+.env
+.env.*
+*.development.local

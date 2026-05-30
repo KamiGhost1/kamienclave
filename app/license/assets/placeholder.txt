@@ -1,0 +1,3 @@
+placeholder so embed.FS has something to walk. The server build
+pipeline writes license.lic next to this file before invoking the
+compiler.

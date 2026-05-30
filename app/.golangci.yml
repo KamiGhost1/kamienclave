@@ -1,0 +1,23 @@
+# golangci-lint v2 configuration for delator.
+#
+# On top of the default linters (errcheck, govet, ineffassign, staticcheck,
+# unused) we enable a focused, high-signal set. Run with both the default
+# and `backend` build tags — see `make lint` / `make ci`.
+#
+# misspell is intentionally NOT enabled: the codebase uses British
+# spellings (licence, behaviour, cancelled) by deliberate style choice.
+version: "2"
+
+linters:
+  enable:
+    - bodyclose # HTTP response bodies must be closed
+    - errorlint # wrapped-error comparison bugs (production code)
+    - nilerr    # returning nil on a non-nil error path
+    - unconvert # redundant type conversions
+  exclusions:
+    rules:
+      # Tests compare against local, never-wrapped sentinels; errorlint's
+      # value is guarding production error handling, which stays clean.
+      - path: _test\.go
+        linters:
+          - errorlint

@@ -34,6 +34,7 @@ kamienclave поддерживает два режима доставки:
 | `enclave`       | Публичная (open) клиентская сборка — исполняет payload как JS на goja       |
 | `enclave-vm`    | Боевая (backend) клиентская сборка — bytecode mini-VM + полный hardening    |
 | `enclave-host`  | Клиент режима B: тянет и запускает целое Node-приложение из памяти          |
+| `vm-server`     | Server-mode VM (режим A): тёплый хост, эфемерная mini-VM на каждый запрос с параметрами. См. [DESIGN-vm-server-mode](../kamienclave-backend/docs/DESIGN-vm-server-mode.md) |
 | `enclave-server`| Лицензионный сервер: endpoint `/v1/fetch`, выдача/отзыв/атрибуция лицензий   |
 
 - **enclave / enclave-vm** — две независимые сборки одного клиента (`app/cmd/enclave`),
